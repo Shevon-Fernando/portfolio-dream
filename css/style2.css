@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  background: #ffffff;
+}
+.container {
+  display: flex;
+  overflow: hidden;
+  max-height: 100vh;
+  flex-direction: column;
+}
+
+.main-layout {
+  display: flex;
+  overflow-y: auto;
+  scrollbar-color: #a6a6a6 transparent;
+}
+.main-layout .sidebar {
+  width: 280px;
+  overflow: hidden;
+  padding: 0 11px 0;
+  background: #ffffff;
+}
+.main-layout .sidebar .nav-left {
+  display: none;
+  padding: 8px 5px;
+}
+body.sidebar-hidden .main-layout .sidebar {
+  width: 0;
+  padding: 0;
+}
+
+.main-layout .content-wrapper {
+  padding: 0 16px;
+  overflow-x: hidden;
+  width: 100%;
+}
+.content-wrapper .video-list {
+  display: grid;
+  gap: 16px;
+  padding: 20px 0 64px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.content-wrapper .video-list .video-card {
+  text-decoration: none;
+  background-color: #ffffffbe;
+  border: 1px solid #e7e7e7;
+  backdrop-filter: blur(50px);
+  border-radius: 15px;
+  overflow: hidden;
+  height: 515px;
+  transition-duration: .5s;
+}
+
+.content-wrapper .video-list .video-card:hover {
+    box-shadow: 0px 0px 30px 0px #0000001c;
+}
+
+.content-wrapper .video-list .video-card .thumbnail-container {
+  position: relative;
+}
+.content-wrapper .video-list .video-card .thumbnail {
+  width: 100%;
+  background: #a6a6a600;
+}
+.content-wrapper .video-list .video-card .duration {
+  position: absolute;
+  right: 10px;
+  bottom: 12px;
+  color: #00ffdd;
+  font-size: 0.975rem;
+  font-weight: 700;
+  padding: 0 5px;
+  border-radius: 5px;
+  background: #086b569d;
+  backdrop-filter: blur(10px);
+}
+.content-wrapper .video-list .video-card .video-info {
+  display: flex;
+  gap: 11px;
+  padding: 11px 15px;
+}
+.content-wrapper .video-list .video-card .icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.content-wrapper .video-list .video-card .title {
+  font-size: 1rem;
+  color: #1b1b1b;
+  font-weight: 600;
+  line-height: 1.375;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.content-wrapper .video-list .video-card .channel-name {
+  margin: 4px 0 2px;
+  color: #07bea6;
+  font-size: 12px;
+}
+
+.content-wrapper .video-list .video-card .views {
+    color: #808080;
+    font-size: 12px;
+  }
+
+  .description li{
+    width: 80%;
+    color: #666666;
+    font-size: 13px;
+    font-style: normal;
+    margin: 6px 0px 0px 25px;
+    
+  }
+
+  .description h4 {
+    font-style: normal;
+    color: #424242;
+    font-size: 13px;
+    padding-top: 15px;
+  }
+
+.hireme {
+    position: fixed;
+    padding: 10px 50px 10px 50px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 100px;
+    font-weight: 600;
+    transition-duration: .4s;
+    margin-bottom: 20px;
+    bottom: 0;
+}
+
+.hireme:hover {
+    background-color: #4d4d4d;
+    padding: 10px 45px 10px 45px;
+}
+
+.btnbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive media code for small devices */
+@media (max-width: 768px) {
+  .navbar {
+    gap: 1rem;
+  }
+  .navbar .nav-center,
+  body.show-mobile-search .navbar .nav-left,
+  body.show-mobile-search .navbar .nav-right {
+    display: none;
+  }
+  .navbar .nav-right .search-button,
+  body.show-mobile-search .navbar .search-back-button,
+  body.show-mobile-search .navbar .nav-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-layout .screen-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 15;
+    width: 100%;
+    height: 100vh;
+    background: var(--overlay-dark-color);
+    transition: 0.2s ease;
+  }
+  body.sidebar-hidden .main-layout .screen-overlay {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .main-layout .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    height: 100vh;
+    transition: 0.2s ease;
+  }
+  body.sidebar-hidden .main-layout .sidebar {
+    left: -280px;
+  }
+  .main-layout .sidebar .nav-left {
+    display: flex;
+  }
+}
