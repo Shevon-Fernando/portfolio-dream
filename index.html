@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Portfolio</title>
+</head>
+<body>
+
+    <div id="main">
+      <div id="lorder">
+        <div id="topheading">
+          <h5 class="reveal">Portfolio site &copy; 2024</h5>
+        </div>
+        <h1 class="reveal"><span id="wlcmword"> ~WELCOME~ </span><span></span></h1>
+      </div>
+      <div id="green"></div>
+      <div id="home">
+        <div id="nav">
+          <a href="#">Shevon Fernando</a><a href="#">Services</a><a href="#">About Me</a><a href="#">Contact</a>
+        </div>
+        <div class="row">
+          <h1 class="reveal">Creative</h1>
+          <div class="text">
+                <h5 class="reveal">CURRENTLY AVAILABLE FOR</h5>
+                <h5 class="reveal">FREELANCE WORLDWIDE</h5>
+          </div>
+          <div class="text">
+            <h5 class="reveal">MY LOCAL TIME 10:59</h5>
+            <h5 class="reveal">GMT (+5:30)</h5>
+          </div>
+        </div>
+        <div class="row">
+          <button class="btndwn"><ion-icon name="arrow-down-sharp"></ion-icon></button>
+          <h1 class="reveal"><span class="txtanimate">Designer</span></h1>
+        </div>
+        <div class="container">
+          <p></p>
+        </div>
+    </div>
+    <div class="servicesbox">
+      <p class="title">Our Services</p>
+      <div class="srboxes">
+        <div class="boxes">
+          <div class="box"><ion-icon name="sparkles"></ion-icon><h3>Graphic Designing</h3><p>Graphic designing involves creating visually appealing layouts using typography, colors, and creative elements.</p></div>
+          <div class="box"><ion-icon name="browsers"></ion-icon><h3>Web Developing</h3><p>Web developing focuses on building functional, responsive, and user-friendly websites for various purposes.</p></div>
+        </div>
+        <div class="boxes">
+          <div class="box"><ion-icon name="brush"></ion-icon><h3>Sketch Drawing</h3><p>Sketch drawing captures ideas, emotions, and creativity through simple or detailed pencil strokes.</p></div>
+          <div class="box"><ion-icon name="tv"></ion-icon><h3>Software Developing</h3><p>Software development helps automate processes and improve efficiency in businesses and organizations.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="faqboxtitle">
+      <p>Frequently asked questions</p>
+    </div>
+    <div class="faqsection">
+      <div class="accordion">
+        <div class="accordion-content">
+            <header>
+                <span class="title">What payment methods do you accept?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+            <p class="description">
+              I accept only bank transfers. Payment details will be provided upon order confirmation.
+            </p>
+        </div>
+        <div class="accordion-content">
+          <header>
+              <span class="title">What is your payment policy?</span>
+              <i class="fa-solid fa-plus"></i>
+          </header>
+          <p class="description">
+            Yes, I include revisions to ensure satisfaction. The number of revisions will be specified in the agreement. Extra revisions may incur additional charges.
+          </p>
+        </div>
+          <div class="accordion-content">
+            <header>
+                <span class="title">Do you offer revisions?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+            <p class="description">
+              A 50% deposit is required to start, with the balance due upon completion. Larger projects can have milestone-based payments.
+            </p>
+        </div>
+        <div class="accordion-content">
+          <header>
+              <span class="title">What information do you need to start?</span>
+              <i class="fa-solid fa-plus"></i>
+          </header>
+          <p class="description">
+            I need a detailed brief including your objectives, target audience, style preferences, color choices, and any specific elements or examples you like.
+          </p>
+        </div>
+        <div class="accordion-content">
+          <header>
+              <span class="title">What is your payment policy?</span>
+              <i class="fa-solid fa-plus"></i>
+          </header>
+          <p class="description">
+            Yes, I include revisions to ensure satisfaction. The number of revisions will be specified in the agreement. Extra revisions may incur additional charges.
+          </p>
+        </div>
+      </div>
+</div>
+    </div>
+  <script>
+     const accordionContent = document.querySelectorAll(".accordion-content");
+accordionContent.forEach((item, index) => {
+    let header = item.querySelector("header");
+    header.addEventListener("click", () =>{
+        item.classList.toggle("open");
+        let description = item.querySelector(".description");
+        if(item.classList.contains("open")){
+            description.style.height = `${description.scrollHeight}px`; //scrollHeight property returns the height of an element including padding , but excluding borders, scrollbar or margin
+            item.querySelector("i").classList.replace("fa-plus", "fa-minus");
+        }else{
+            description.style.height = "0px";
+            item.querySelector("i").classList.replace("fa-minus", "fa-plus");
+        }
+        removeOpen(index); //calling the funtion and also passing the index number of the clicked header
+    })
+})
+function removeOpen(index1){
+    accordionContent.forEach((item2, index2) => {
+        if(index1 != index2){
+            item2.classList.remove("open");
+            let des = item2.querySelector(".description");
+            des.style.height = "0px";
+            item2.querySelector("i").classList.replace("fa-minus", "fa-plus");
+        }
+    })
+}
+  </script>
+
+<section class="footer">
+  <div class="footer-row">
+    <div class="footer-col">
+      <h4>Info</h4>
+      <ul class="links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Art Collection</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul class="links">
+        <li><a href="#">Graphic Design</a></li>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">Software Development</a></li>
+        <li><a href="#">Sketch Drawing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul class="links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Email Address</h4>
+      <p>
+
+      </p>
+      <form action="#">
+        <input type="text" placeholder="Your email" required>
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+      <div class="icons">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-github"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
